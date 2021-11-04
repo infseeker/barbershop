@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
   <header>
     <nav>
       <a>
@@ -23,12 +24,16 @@
       </ul>
     </nav>
     <ul>
-      <li>Вход</li>
+      <li>
+        <a href="login.html">Вход</a>
+      </li>
     </ul>
   </header>
+
   <main>
     <div class="container">
       <h1>Барбершоп «Бородинский»</h1>
+
       <section>
         <h2>Наши преимущества</h2>
         <ul>
@@ -55,6 +60,7 @@
           </li>
         </ul>
       </section>
+
       <section>
         <h2>Новости</h2>
         <ul>
@@ -74,6 +80,7 @@
           </li>
         </ul>
       </section>
+
       <section>
         <h2>Фотогалерея</h2>
         <figure>
@@ -84,6 +91,7 @@
         <button>Назад</button>
         <button>Вперёд</button>
       </section>
+
       <section>
         <h2>Контактная информация</h2>
         <address>
@@ -92,13 +100,14 @@
           Телефон: +7 (495) 666-02-66
         </address>
         <p>
-          Время работы:<br />
-          пн—пт: с 10:00 до 22:00<br />
-          сб—вс: с 10:00 до 19:00<br />
+          Время работы:<br>
+          пн—пт: с 10:00 до 22:00<br>
+          сб—вс: с 10:00 до 19:00<br>
         </p>
         <a href="map.html">Как проехать</a>
         <a href="map.html">Обратная связь</a>
       </section>
+
       <section>
         <h2>Записаться</h2>
         <p>
@@ -106,51 +115,103 @@
           брони
         </p>
 
-        <form action="post">
-          <fieldset>
+        <form action="https://echo.htmlacademy.ru" method="post">
+          <div>
             <label for="appointment-date">Дата</label>
-            <input id="appointment-date" name="appointment-date" type="date">
-
+            <input id="appointment-date" name="appointment-date" type="date" placeholder="05.11.2021">
+          </div>
+          <div>
             <label for="appointment-time">Время</label>
-            <input id="appointment-time" name="appointment-time" type="time">
-
+            <input id="appointment-time" name="appointment-time" type="time" placeholder="10:00">
+          </div>
+          <div>
             <label for="appointment-name">Ваше имя</label>
-            <input id="appointment-name" name="appointment-name" type="text">
-
+            <input id="appointment-name" name="appointment-name" type="text" placeholder="Борода">
+          </div>
+          <div>
             <label for="appointment-tel">Телефон</label>
-            <input id="appointment-tel" name="appointment-tel" type="tel">
-
-            <button type="submit">Отправить</button>
-          </fieldset>
+            <input id="appointment-tel" name="appointment-tel" type="tel" placeholder="placeholder=" +7 123 456-78-90"">
+          </div>
+          <button type="submit">Отправить</button>
         </form>
       </section>
     </div>
   </main>
 
   <footer>
-    <section>
+    <div>
       <address>
         Барбершоп «Бородинский»
         Адрес: Г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
         <a href="#">Как нас найти?</a>
         Телефон: +7 (495) 666-02-66
       </address>
-    </section>
+    </div>
 
-    <section>
+    <div>
       <h3>Давайте дружить</h3>
       <ul>
         <li><a href="https://vk.com" alt="VK">VK</a></li>
         <li><a href="https://facebook.com" alt="Facebook">Facebook</a></li>
         <li><a href="https://instagram.com" alt="Instagram">Instagram</a></li>
       </ul>
-    </section>
+    </div>
 
-    <section>
+    <div>
       <h3>Разработано</h3>
       <a href="https://htmlacademy.ru">HTML Academy</a>
-    </section>
+    </div>
   </footer>
+
+  <!-- Modals -->
+
+  <!-- Login -->
+  <section>
+    <h2>Личный кабинет</h2>
+    <p>Введите, пожалуйста, свой логин и пароль</p>
+
+    <form action="https://echo.htmlacademy.ru" method="post">
+      <div>
+        <label for="user-login">Логин</label>
+        <input id="user-login" name="user-login" type="text">
+      </div>
+      <div>
+        <label for="user-password">Пароль</label>
+        <input id="user-password" name="user-password" type="password">
+      </div>
+      <div>
+        <label for="user-remember">
+          <input id="user-remember" name="user-remember" type="checkbox">
+          Запомните меня
+        </label>
+        <a href="restore.html">Я забыл пароль</a>
+      </div>
+      <button type="submit">Войти</button>
+    </form>
+    <button type="button">
+      <span>Закрыть</span>
+    </button>
+  </section>
+
+  <!-- Map -->
+  <section>
+    <h2>Как до нас добраться</h2>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037872533261!2d30.32085871569898!3d59.93871648187617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1534657034553"
+        width="766" height="560" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <img src="img/map.jpg" width="766" height="560"
+        alt="Барбершоп расположен по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
+    </div>
+    <button type="button">
+      <span>Закрыть</span>
+    </button>
+  </section>
+
+  <!-- Photo -->
+  <section>
+
+  </section>
 </body>
 
 </html>
