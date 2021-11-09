@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: "PT Sans Narrow", Arial, Helvetica, sans-serif;
+  font-family: 'PT Sans Narrow', Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 1.7;
   font-weight: 700;
@@ -24,7 +24,7 @@ body {
   text-transform: uppercase;
 
   background: #000000;
-  background-image: url("../img/index/index-bg.jpg");
+  background-image: url('../img/index/index-bg.jpg');
   background-position: top center;
   background-repeat: no-repeat;
 }
@@ -33,7 +33,7 @@ body {
   color: #000000;
 
   background-color: #f9f6f3;
-  background-image: url("../img/common/pattern-light.jpg");
+  background-image: url('../img/common/pattern-light.jpg');
   background-position: 0 0;
   background-repeat: repeat;
 }
@@ -60,8 +60,8 @@ img {
 }
 
 .visually-hidden:not(:focus):not(:active),
-input[type="checkbox"].visually-hidden,
-input[type="radio"].visually-hidden {
+input[type='checkbox'].visually-hidden,
+input[type='radio'].visually-hidden {
   position: absolute;
 
   width: 1px;
@@ -184,7 +184,7 @@ input[type="radio"].visually-hidden {
 }
 
 .site-navigation-current:after {
-  content: "";
+  content: '';
 
   position: absolute;
   right: 20px;
@@ -221,7 +221,7 @@ input[type="radio"].visually-hidden {
 }
 
 .login-link::before {
-  content: "";
+  content: '';
 
   position: absolute;
   top: 27px;
@@ -275,7 +275,7 @@ input[type="radio"].visually-hidden {
 }
 
 .features-item h3:after {
-  content: "";
+  content: '';
 
   position: absolute;
   bottom: -30px;
@@ -302,8 +302,8 @@ input[type="radio"].visually-hidden {
   color: #000000;
 
   background-color: #f8f5f2;
-  background-image: url("../img/index/line.png"),
-    url("../img/common/pattern-light.jpg");
+  background-image: url('../img/index/line.png'),
+    url('../img/common/pattern-light.jpg');
   background-position: center, 0 0;
   background-repeat: no-repeat, repeat;
 }
@@ -492,7 +492,7 @@ input[type="radio"].visually-hidden {
   color: #ffffff;
 
   background-color: #212121;
-  background-image: url("../img/common/pattern-dark.jpg");
+  background-image: url('../img/common/pattern-dark.jpg');
 }
 
 .inner-page .main-footer {
@@ -598,13 +598,13 @@ input[type="radio"].visually-hidden {
   color: #000000;
 
   background-color: #f8f3f0;
-  background-image: url("../img/common/pattern-light.jpg");
+  background-image: url('../img/common/pattern-light.jpg');
   background-position: 0 0;
   background-repeat: repeat;
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
 }
 
-.modal-overlay-login {
+.modal-overlay {
   position: fixed;
   top: 0;
   z-index: 1;
@@ -654,7 +654,20 @@ input[type="radio"].visually-hidden {
 .modal-show {
   display: block;
   animation-name: bounce;
-  animation-duration: 0.6 s;
+  animation-duration: 0.6s;
+}
+
+.modal-show ~ .modal-overlay {
+  position: fixed;
+  top: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-error {
+  animation: shake 0.6s;
 }
 
 .modal-close {
@@ -675,7 +688,7 @@ input[type="radio"].visually-hidden {
 
 .modal-close::before,
 .modal-close::after {
-  content: "";
+  content: '';
 
   position: absolute;
   top: 10px;
@@ -722,7 +735,8 @@ input[type="radio"].visually-hidden {
   font-size: 30px;
 }
 
-.login-form p, .login-form > div {
+.login-form p,
+.login-form > div {
   margin: 0;
   margin-bottom: 10px;
 }
@@ -732,8 +746,8 @@ input[type="radio"].visually-hidden {
   line-height: 1.4;
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.login-form input[type='text'],
+.login-form input[type='password'] {
   width: 300px;
   padding: 10px 15px;
   padding-right: 40px;
@@ -751,6 +765,11 @@ input[type="radio"].visually-hidden {
   border-color: #663d15;
 }
 
+.login-form input[type='text'].field-error,
+.login-form input[type='password'].field-error {
+  background-color: #e55050;
+}
+
 .login-form .login-password-info {
   display: flex;
   flex-wrap: wrap;
@@ -759,13 +778,13 @@ input[type="radio"].visually-hidden {
 }
 
 .login-icon-user {
-  background-image: url("../img/common/user.svg");
+  background-image: url('../img/common/user.svg');
   background-position: 270px center;
   background-repeat: no-repeat;
 }
 
 .login-icon-password {
-  background-image: url("../img/common/lock.svg");
+  background-image: url('../img/common/lock.svg');
   background-position: 270px center;
   background-repeat: no-repeat;
 }
@@ -783,7 +802,7 @@ input[type="radio"].visually-hidden {
   color: #663d15;
 }
 
-.user-remember input[type="checkbox"] + .checkbox-indicator {
+.user-remember input[type='checkbox'] + .checkbox-indicator {
   position: absolute;
   top: 0;
   left: 0;
@@ -794,14 +813,14 @@ input[type="radio"].visually-hidden {
   border: 2px solid #000000;
 }
 
-.user-remember input[type="checkbox"]:focus + .checkbox-indicator {
+.user-remember input[type='checkbox']:focus + .checkbox-indicator {
   border-color: #663d15;
   outline: 1px dotted;
 }
 
-.user-remember input[type="checkbox"]:checked + .checkbox-indicator::before,
-.user-remember input[type="checkbox"]:checked + .checkbox-indicator::after {
-  content: "";
+.user-remember input[type='checkbox']:checked + .checkbox-indicator::before,
+.user-remember input[type='checkbox']:checked + .checkbox-indicator::after {
+  content: '';
 
   position: absolute;
   top: 8px;
@@ -813,11 +832,11 @@ input[type="radio"].visually-hidden {
   background-color: #000000;
 }
 
-.user-remember input[type="checkbox"]:checked + .checkbox-indicator::before {
+.user-remember input[type='checkbox']:checked + .checkbox-indicator::before {
   transform: rotate(45deg);
 }
 
-.user-remember input[type="checkbox"]:checked + .checkbox-indicator::after {
+.user-remember input[type='checkbox']:checked + .checkbox-indicator::after {
   transform: rotate(-45deg);
 }
 
@@ -851,15 +870,6 @@ input[type="radio"].visually-hidden {
 
 .modal-map > div {
   margin: 0;
-}
-
-.overlay-show {
-  position: fixed;
-  top: 0;
-
-  display: block;
-  width: 100%;
-  height: 100%;
 }
 
 .modal-photo {

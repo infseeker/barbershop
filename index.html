@@ -32,7 +32,7 @@
           </ul>
           <ul class="user-navigation">
             <li>
-              <a class="login-link" href="login.html">Вход</a>
+              <a class="login-link" id="login-link" href="login.html">Вход</a>
             </li>
           </ul>
         </div>
@@ -218,18 +218,18 @@
 
   <!-- Modals -->
   <!-- Login -->
-  <section class="modal modal-login">
+  <section class="modal modal-login" id="modal-login">
     <h2>Личный кабинет</h2>
     <p>Введите, пожалуйста, свой логин и пароль</p>
 
-    <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+    <form class="login-form" id='login-form' action="https://echo.htmlacademy.ru" method="post">
       <div>
         <label class="visually-hidden" for="user-login">Логин</label>
         <input class="login-icon-user" id="user-login" name="user-login" type="text" placeholder="Логин">
       </div>
       <div>
         <label class="visually-hidden" for="user-password">Пароль</label>
-        <input class="login-icon-password" id="user-password" name="user-password" type="password" placeholder="password">
+        <input class="login-icon-password" id="user-password" name="user-password" type="password" placeholder="Пароль">
       </div>
       <div class="login-password-info">
         <label class="user-remember">
@@ -241,14 +241,13 @@
       </div>
       <button class="button" type="submit">Войти</button>
     </form>
-    <button class="modal-close modal-close-login" type="button">
+    <button class="modal-close modal-close-login" id="login-modal-close-button" type="button">
       <span>Закрыть</span>
     </button>
   </section>
-  <div class="modal-overlay-login"></div>
 
   <!-- Map -->
-  <section class="modal modal-map">
+  <section class="modal modal-map" id="modal-map">
     <h2 class="visually-hidden">Как до нас добраться</h2>
     <div>
       <iframe
@@ -261,10 +260,9 @@
       <span>Закрыть</span>
     </button>
   </section>
-  <div class="modal-overlay-map"></div>
 
   <!-- Photo -->
-  <section class="modal modal-photo">
+  <section class="modal modal-photo" id="modal-photo">
     <div>
       <img class="img-big" src="img/index/gallery/gallery-photo-big-1.jpg" width="780" height="560" alt="Большое фото">
     </div>
@@ -272,6 +270,10 @@
       <span>Закрыть</span>
     </button>
   </section>
+
+  <div class="modal-overlay"></div>
+
+  <script src="js/modals.js" type="text/javascript"></script>
 </body>
 
 </html>
