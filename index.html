@@ -97,22 +97,25 @@
           <div class="gallery-container">
             <figure class="gallery-content">
               <ul class="gallery-slides">
-                <li class="gallery-slide">
-                  <a href="#"><img src="img/index/gallery/gallery-photo-small-1.jpg" alt="Интерьер"></a>
+                <li class="gallery-slide gallery-slide-show">
+                  <a href="#">
+                    <img src="img/index/gallery/gallery-photo-small-1.jpg" width="286" height="165" alt="Интерьер">
+                  </a>
                 </li>
-                <li class="gallery-slide gallery-slideshow">
-                  <img src="img/index/gallery/gallery-photo-small-2.jpg" alt="Стильные причёски">
+                <li class="gallery-slide">
+                  <a href="#">
+                    <img src="img/index/gallery/gallery-photo-small-2.jpg" width="286" height="165" alt="Стильные причёски">
+                  </a>
                 </li>
                 <li class="gallery-slide">
-                  <img src="img/index/gallery/gallery-photo-small-3.jpg" alt="Главный интерьер">
+                  <a href="#">
+                    <img src="img/index/gallery/gallery-photo-small-3.jpg" width="286" height="165" alt="Главный интерьер">
+                  </a>
                 </li>
               </ul>
-              <a href="#">
-                <img src="img/index/gallery/gallery-photo-small-1.jpg" width="286" height="165" alt="Интерьер" />
-              </a>
             </figure>
-            <button class="button gallery-button gallery-button-back">Назад</button>
-            <button class="button gallery-button gallery-button-next">Вперёд</button>
+            <button class="button gallery-button gallery-button-back" id="gallery-button-back">Назад</button>
+            <button class="button gallery-button gallery-button-next" id="gallery-button-next">Вперёд</button>
           </div>
         </section>
       </div>
@@ -256,7 +259,7 @@
       <img class="visually-hidden" src="img/common/map.jpg" width="766" height="560"
         alt="Барбершоп расположен по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
     </div>
-    <button class="modal-close modal-close-map" type="button">
+    <button class="modal-close modal-close-map" id="map-modal-close-button" type="button">
       <span>Закрыть</span>
     </button>
   </section>
@@ -264,16 +267,16 @@
   <!-- Photo -->
   <section class="modal modal-photo" id="modal-photo">
     <div>
-      <img class="img-big" src="img/index/gallery/gallery-photo-big-1.jpg" width="780" height="560" alt="Большое фото">
+      <img class="img-big" id="img-big" src="img/index/gallery/gallery-photo-big-1.jpg" width="780" height="560" alt="Большое фото">
     </div>
-    <button class="modal-close modal-close-photo" type="button">
+    <button class="modal-close modal-close-photo" id="photo-modal-close-button" type="button">
       <span>Закрыть</span>
     </button>
   </section>
 
   <div class="modal-overlay"></div>
 
-  <script src="js/modals.js" type="text/javascript"></script>
+  <script src="js/script.js" type="text/javascript"></script>
 </body>
 
 </html>

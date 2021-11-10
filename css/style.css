@@ -386,7 +386,7 @@ input[type='radio'].visually-hidden {
   height: 164px;
 }
 
-.gallery-slideshow {
+.gallery-slide-show {
   opacity: 1;
   z-index: 2;
 }
