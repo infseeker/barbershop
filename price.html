@@ -14,157 +14,95 @@
   <title>Барбершоп «Бородинский»</title>
 </head>
 
-<body>
-
+<body class="inner-page">
   <header class="main-header">
-    <nav class="main-navigation">
-      <a class="main-header-logo">
-        <img src="img/index/index-logo.svg" width="368" height="153" alt="Логотип Барбершопа «Бородинский»" />
+    <nav class="main-navigation container">
+      <a class="main-header-logo" href="index.html">
+        <img src="img/common/logo.svg" width="111" height="24" alt="Логотип Барбершопа «Бородинский»" />
       </a>
-      <div class="main-navigation-wrapper">
-        <div class="container">
-          <ul class="site-navigation">
-            <li><a href="#info.html">Информация</a></li>
-            <li><a href="#news.html">Новости</a></li>
-            <li><a href="price.html">Прайс-лист</a></li>
-            <li><a href="catalog.html">Магазин</a></li>
-            <li><a href="#contacts.html">Контакты</a></li>
-          </ul>
-          <ul class="user-navigation">
-            <li>
-              <a class="login-link" id="login-link" href="login.html">Вход</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <ul class="site-navigation">
+        <li><a href="#info.html">Информация</a></li>
+        <li><a href="#news.html">Новости</a></li>
+        <li class="site-navigation-current"><a>Прайс-лист</a></li>
+        <li><a href="catalog.html">Магазин</a></li>
+        <li><a href="#contacts.html">Контакты</a></li>
+      </ul>
+      <ul class="user-navigation">
+        <li>
+          <a class="login-link" id="login-link" href="login.html">Вход</a>
+        </li>
+      </ul>
     </nav>
   </header>
 
   <main>
     <div class="container">
-      <h1 class="visually-hidden">Барбершоп «Бородинский»</h1>
+      <h1 class="page-title">Прайс-лист</h1>
+      <ul class="breadcrumbs">
+        <li class="breadcrumbs-item">
+          <a href="index.html">Главная</a>
+        </li>
+        <li class="breadcrumbs-item breadcrumbs-current">Прайс-лист</li>
+      </ul>
+      <h2 class="big-heading">Истинно мужская классика</h2>
 
-      <section class="features" id="features">
-        <h2 class="visually-hidden">Наши преимущества</h2>
-        <ul class="features-list">
-          <li class="features-item">
-            <h3>Быстро</h3>
-            <p>
-              Мы делаем свою работу быстро! Два часа пролетят незаметно и вы —
-              счастливый обладатель стильной стрижки-минутки!
-            </p>
-          </li>
-          <li class="features-item">
-            <h3>Круто</h3>
-            <p>
-              Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду
-              футбола или кино! <br> Во всяком случае внешне.
-            </p>
-          </li>
-          <li class="features-item">
-            <h3>Дорого</h3>
-            <p>
-              Наши мастера — профессионалы своего дела и не могут стоить
-              дешево. К тому же, разве цена не дает определенный статус?
-            </p>
-          </li>
-        </ul>
-      </section>
-
-      <div class="index-column">
-        <section class="news" id="news">
-          <h2>Новости</h2>
-          <ul class="news-list">
-            <li class="news-item">
-              <p>
-                Нам, наконец, завезли егермейстер! Теперь вы можете пропустить
-                стаканчик во время стрижки
-              </p>
-              <time datetime="2021-01-11">11 января</time>
-            </li>
-            <li class="news-item">
-              <p>
-                В нашей команде пополнение, Борис «Бритва» Стригунец, обладатель
-                множества титулов и наград пополнил наши стройные ряды
-              </p>
-              <time datetime="2020-01-18">18 января</time>
-            </li>
+      <div class="flex-wrapper">
+        <section class="flex-wrapper-item stuffs">
+          <h2 class="medium-heading">
+            Мы используем только <br>
+            лучшие средства:
+          </h2>
+          <ul class="stuffs-items">
+            <li class="stuffs-item">Baxter of California</li>
+            <li class="stuffs-item">Mr Natty</li>
+            <li class="stuffs-item">Suavecito</li>
+            <li class="stuffs-item">Malin+Goetz</li>
           </ul>
-          <a class="button" href="news.html">Все новости</a>
         </section>
-        <section class="gallery" id="gallery">
-          <h2>Фотогалерея</h2>
-          <div class="gallery-container">
-            <figure class="gallery-content">
-              <ul class="gallery-slides">
-                <li class="gallery-slide gallery-slide-show">
-                  <a href="#">
-                    <img src="img/index/gallery/gallery-photo-small-1.jpg" width="286" height="165" alt="Интерьер">
-                  </a>
-                </li>
-                <li class="gallery-slide">
-                  <a href="#">
-                    <img src="img/index/gallery/gallery-photo-small-2.jpg" width="286" height="165"
-                      alt="Стильные причёски">
-                  </a>
-                </li>
-                <li class="gallery-slide">
-                  <a href="#">
-                    <img src="img/index/gallery/gallery-photo-small-3.jpg" width="286" height="165"
-                      alt="Главный интерьер">
-                  </a>
-                </li>
-              </ul>
-            </figure>
-            <button class="button gallery-button gallery-button-back" id="gallery-button-back">Назад</button>
-            <button class="button gallery-button gallery-button-next" id="gallery-button-next">Вперёд</button>
-          </div>
+
+        <section class="flex-wrapper-item price">
+          <h2 class="medium-heading">
+            Цены на услуги <br>
+            наших мастеров:
+          </h2>
+          <table class="price-table">
+            <caption class="visually-hidden">Цены на услуги Барбершопа «Бородинский»</caption>
+            <tbody>
+              <tr>
+                <td>Стрижка</td>
+                <td>1500 ₽</td>
+              </tr>
+              <tr>
+                <td>Стрижка бороды</td>
+                <td>500 ₽</td>
+              </tr>
+              <tr>
+                <td>Накрутка усов</td>
+                <td>350 ₽</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
       </div>
 
-      <div class="index-column">
-        <section class="contacts" id="contacts">
-          <h2>Контактная информация</h2>
-          <address>
-            Барбершоп «бородинский»<br>
-            Адрес: г. Санкт-Петербург, Б. Конюшенная, Д. 19/8<br>
-            Телефон: +7 (495) 666-02-66
-          </address>
-          <p>
-            Время работы:<br>
-            пн—пт: с 10:00 до 22:00<br>
-            сб—вс: с 10:00 до 19:00<br>
-          </p>
-          <a class="button js-button-map" href="map.html">Как проехать</a>
-          <a class="button" href="#">Обратная связь</a>
-        </section>
-        <section class="appointment">
-          <h2>Записаться</h2>
-          <p class="appointment-info">
-            Укажите желаемую дату и время и мы свяжемся с вами для подтверждения
-            брони
-          </p>
-          <form class="appointment-form" action="https://echo.htmlacademy.ru" method="post">
-            <div class="appointment-item">
-              <label for="appointment-date">Дата</label>
-              <input id="appointment-date" name="appointment-date" type="date" placeholder="05.11.2021">
-            </div>
-            <div class="appointment-item">
-              <label for="appointment-time">Время</label>
-              <input id="appointment-time" name="appointment-time" type="time" value="10:00">
-            </div>
-            <div class="appointment-item">
-              <label for="appointment-name">Ваше имя</label>
-              <input id="appointment-name" name="appointment-name" type="text" placeholder="Борода">
-            </div>
-            <div class="appointment-item">
-              <label for="appointment-tel">Телефон</label>
-              <input id="appointment-tel" name="appointment-tel" type="tel" placeholder="+7 123 456-78-90">
-            </div>
-            <button class="button" type="submit">Отправить</button>
-          </form>
-        </section>
-      </div>
+      <section class="about">
+        <h2 class="medium-heading">Несколько слов о нас:</h2>
+        <div class="flex-wrapper">
+          <div class="flex-wrapper-item">
+            <p>
+              Наша парикмахерская занимается исключительно мужскими стрижками. Стрижка каждого клиента для нас - это
+              уникальная и продуманная до мелочей работа. Мы не работаем на количество, мы делаем качество.
+            </p>
+          </div>
+          <div class="flex-wrapper-item">
+            <p>
+              Наша мастерская расположена в центре города, поэтому сделать стильную стрижку можно в любое время, даже в
+              обеденный перерыв. Здесь вы можете погрузиться в удобную для вас атмосферу, чувствовать себя комфортно и
+              свободно!
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -262,17 +200,6 @@
         alt="Барбершоп расположен по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург">
     </div>
     <button class="modal-close modal-close-map" id="map-modal-close-button" type="button">
-      <span>Закрыть</span>
-    </button>
-  </section>
-
-  <!-- Photo -->
-  <section class="modal modal-photo" id="modal-photo">
-    <div>
-      <img class="img-big" id="img-big" src="img/index/gallery/gallery-photo-big-1.jpg" width="780" height="560"
-        alt="Большое фото">
-    </div>
-    <button class="modal-close modal-close-photo" id="photo-modal-close-button" type="button">
       <span>Закрыть</span>
     </button>
   </section>

@@ -191,5 +191,7 @@ function gallery() {
 document.addEventListener('DOMContentLoaded', () => {
   loginModal();
   mapModal();
-  gallery();
+  if (document.querySelector('#gallery')) {
+    gallery();
+  }
 });
