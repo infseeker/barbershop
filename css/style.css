@@ -936,8 +936,8 @@ input[type='radio'].visually-hidden {
 
 .big-heading {
   display: flex;
-  margin-top: 55px;
-  margin-bottom: 65px;
+  margin-top: 50px;
+  margin-bottom: 60px;
 
   font-size: 48px;
   line-height: 1;
@@ -984,6 +984,10 @@ input[type='radio'].visually-hidden {
 }
 
 /* Price page */
+.big-heading + .flex-wrapper {
+  margin-bottom: 47px;
+}
+
 .about .flex-wrapper {
   margin-bottom: 0;
 }
@@ -992,6 +996,10 @@ input[type='radio'].visually-hidden {
   margin: 0;
   padding: 0;
   padding-right: 90px;
+}
+
+.about .flex-wrapper-item:last-child {
+  padding-left: 12px;
 }
 
 .stuffs-items {
@@ -1017,17 +1025,22 @@ input[type='radio'].visually-hidden {
   top: 7px;
   left: 0;
 
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 
   background-color: #000000;
 
   transform: rotate(45deg);
 }
 
+.flex-wrapper-item.price {
+  padding-left: 12px;
+}
+
 .price-table {
   table-layout: fixed;
   width: 100%;
+  margin-top: 33px;
 
   border-spacing: 0;
   border-collapse: collapse;
@@ -1035,7 +1048,7 @@ input[type='radio'].visually-hidden {
 
 .price-table td {
   margin: 0;
-  padding: 10px 0 10px 17px;
+  padding: 8px 0 8px 17px;
 
   border: 2px solid #000000;
 }
