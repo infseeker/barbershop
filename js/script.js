@@ -188,10 +188,27 @@ function gallery() {
   });
 }
 
+function productPhotos() {
+  let links = document.querySelectorAll('#product-photo-preview a');
+  let fullPhoto = document.querySelector('#product-photo-full img');
+
+  links.forEach((item) => {
+    item.addEventListener('click', function () {
+      let fullPhotoSrc = this.querySelector('img').getAttribute('src').replace('small', 'big');
+      let fullPhotoAlt = this.querySelector('img').getAttribute('alt');
+      fullPhoto.setAttribute('src', fullPhotoSrc);
+      fullPhoto.setAttribute('alt', fullPhotoAlt);
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loginModal();
   mapModal();
   if (document.querySelector('#gallery')) {
     gallery();
+  }
+  if (document.querySelector('#product-photos')) {
+    productPhotos();
   }
 });
