@@ -936,6 +936,10 @@ input[type='radio'].visually-hidden {
   color: #aba9a7;
 }
 
+.breadcrumbs-current a:hover {
+  text-decoration: none;
+}
+
 .big-heading {
   display: flex;
   margin-bottom: 60px;
