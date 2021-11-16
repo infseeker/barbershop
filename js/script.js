@@ -1,42 +1,97 @@
 'use strict';
 
 // Login modal
-function loginModal() {
-  let link = document.querySelector('#login-link');
-  let popup = document.querySelector('#modal-login');
-  let closeButton = document.querySelector('#login-modal-close-button');
+class Modal {
+  constructor() {
+    const modal = this;
+    for (const p in this.list) {
+      let modalListEl = this.list[p];
+      let links = document.querySelectorAll(modalListEl.links);
 
-  let showClass = 'modal-show';
+      // Show selected modal
+      links.forEach((i) => {
+        i.addEventListener('click', (e) => {
+          e.preventDefault();
+          modal.show(modalListEl);
+        });
+      });
+
+      // Close current modal by click on close button
+      document
+        .querySelector(modalListEl.selector)
+        .querySelector(`.${modal.selectors.modalClose}`)
+        .addEventListener('click', (e) => {
+          e.preventDefault();
+          modal.close(modal.currentModal);
+        });
+    }
+
+    document.querySelector(`.${this.selectors.modalOverlay}`).addEventListener('click', (e) => {
+      e.preventDefault();
+      if (this.currentModal) {
+        this.close(this.currentModal);
+      }
+    });
+
+    // Close current modal by Esc
+    document.addEventListener('keydown', (e) => {
+      if (this.currentModal) {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          this.close(this.currentModal);
+        }
+      }
+    });
+  }
+
+  currentModal = null;
+
+  list = {
+    login: {
+      selector: '#modal-login',
+      links: '#login-link',
+    },
+    map: {
+      selector: '#modal-map',
+      links: '.js-button-map',
+    },
+    photo: {
+      selector: '#modal-photo',
+      links: '.gallery-slide a',
+    },
+  };
+
+  selectors = {
+    modalShow: 'modal-show',
+    modalClose: 'modal-close',
+    modalOverlay: 'modal-overlay',
+    bodyLock: 'modal-lock',
+  };
+
+  show(modal) {
+    this.currentModal = modal;
+    document
+      .querySelector(modal.selector)
+      .classList.add(this.selectors.modalShow);
+    document.body.classList.add(this.selectors.bodyLock);
+  }
+
+  close(modal) {
+    document
+      .querySelector(modal.selector)
+      .classList.remove(this.selectors.modalShow);
+    document.body.classList.remove(this.selectors.bodyLock);
+  }
+}
+
+function loginFormValidation() {
+  let popup = document.querySelector('#modal-login');
   let errorClass = 'modal-error';
   let errorFieldClass = 'field-error';
 
   let form = document.querySelector('#login-form');
   let login = document.querySelector('#user-login');
   let password = document.querySelector('#user-password');
-
-  // Show login modal
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    popup.classList.add(showClass);
-  });
-
-  // Close login modal
-  let closeModal = () => {
-    popup.classList.remove(showClass);
-    popup.classList.remove(errorClass);
-  };
-
-  closeButton.addEventListener('click', () => {
-    if (popup.classList.contains(showClass)) {
-      closeModal();
-    }
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeModal();
-    }
-  });
 
   // Login form submit
   form.addEventListener('submit', function (e) {
@@ -65,40 +120,6 @@ function loginModal() {
   });
 }
 
-// Map modal
-function mapModal() {
-  let links = document.querySelectorAll('.js-button-map');
-  let popup = document.querySelector('#modal-map');
-  let closeButton = document.querySelector('#map-modal-close-button');
-  let showClass = 'modal-show';
-
-  // Show map modal
-  links.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      e.preventDefault();
-
-      popup.classList.add(showClass);
-    });
-  });
-
-  // Close map modal
-  let closeModal = () => {
-    popup.classList.remove(showClass);
-  };
-
-  closeButton.addEventListener('click', () => {
-    if (popup.classList.contains(showClass)) {
-      closeModal();
-    }
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeModal();
-    }
-  });
-}
-
 // Gallery
 function gallery() {
   let prevButton = document.querySelector('#gallery-button-back');
@@ -109,9 +130,6 @@ function gallery() {
   let bigImage = document.querySelector('#img-big');
 
   let links = document.querySelectorAll('.gallery-slide a');
-  let popup = document.querySelector('#modal-photo');
-  let closeButton = document.querySelector('#photo-modal-close-button');
-  let showClass = 'modal-show';
 
   function goToSlide(slideIndex) {
     slides[currentSlideIndex].classList.remove(showSlideClass);
@@ -153,38 +171,11 @@ function gallery() {
     }
   }
 
-  // Open photo modal
-  links.forEach((item) => {
+  links.forEach(item => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
-
-      popup.classList.add(showClass);
       document.addEventListener('keydown', galleryKeyboardActions);
-
-      // Close photo modal by overlay click
-      let modalOverlay = document.querySelector('.modal-show ~ .modal-overlay');
-      modalOverlay.addEventListener('click', () => {
-        closeModal();
-      });
     });
-  });
-
-  // Close photo modal
-  let closeModal = () => {
-    popup.classList.remove(showClass);
-    document.removeEventListener('keydown', galleryKeyboardActions);
-  };
-
-  closeButton.addEventListener('click', () => {
-    if (popup.classList.contains(showClass)) {
-      closeModal();
-    }
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeModal();
-    }
   });
 }
 
@@ -194,7 +185,9 @@ function productPhotos() {
 
   links.forEach((item) => {
     item.addEventListener('click', function () {
-      let fullPhotoSrc = this.querySelector('img').getAttribute('src').replace('small', 'big');
+      let fullPhotoSrc = this.querySelector('img')
+        .getAttribute('src')
+        .replace('small', 'big');
       let fullPhotoAlt = this.querySelector('img').getAttribute('alt');
       fullPhoto.setAttribute('src', fullPhotoSrc);
       fullPhoto.setAttribute('alt', fullPhotoAlt);
@@ -202,13 +195,38 @@ function productPhotos() {
   });
 }
 
+function showMobileMenu() {
+  let burger = document.querySelector('.main-navigation-burger');
+  burger.addEventListener('click', function () {
+    burger.classList.toggle('active');
+    document
+      .querySelector('.main-navigation-wrapper .container')
+      .classList.toggle('active');
+    document.body.classList.toggle('menu-lock');
+  });
+
+  document
+    .querySelector('.user-navigation .login-link')
+    .addEventListener('click', () => {
+      document
+        .querySelector('.main-navigation-wrapper .container')
+        .classList.remove('active');
+        burger.classList.remove('active');
+      document.body.classList.remove('menu-lock');
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  loginModal();
-  mapModal();
+  loginFormValidation();
+
   if (document.querySelector('#gallery')) {
     gallery();
   }
   if (document.querySelector('#product-photos')) {
     productPhotos();
   }
+
+  showMobileMenu();
+
+  new Modal();
 });
