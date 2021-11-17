@@ -560,6 +560,7 @@ input[type='radio'].visually-hidden {
 
 body.modal-lock {
   overflow: hidden;
+  margin-right: 16px;
 }
 
 .modal-overlay {
@@ -869,10 +870,18 @@ body.modal-lock {
 
 .inner-page .main-header-logo {
   order: 0;
-
+  flex-shrink: 0;
   width: 151px;
   height: 70px;
   padding: 23px 20px;
+}
+
+.inner-page .main-navigation-wrapper {
+  margin-bottom: 0;
+}
+
+.inner-page .main-navigation-wrapper .container {
+  width: 100%;
 }
 
 .inner-page .main-navigation {
@@ -1147,14 +1156,6 @@ body.modal-lock {
   background: #000000;
 }
 
-/* .custom-list-radio label:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-.custom-list-radio label input:checked ~ .checkmark {
-  background-color: #2196f3;
-} */
-
 .checkmark:after {
   content: '';
   position: absolute;
@@ -1189,7 +1190,7 @@ body.modal-lock {
   text-align: center;
 }
 
-/* Shop page */
+/* Catalog page */
 .catalog-wrapper {
   display: flex;
   justify-content: space-between;
@@ -1422,8 +1423,14 @@ body.modal-lock {
   body {
     min-width: 320px;
     max-width: 767px;
-    /* overflow-x: hidden; */
-    /* overflow-y: scroll; */
+  }
+
+  body.menu-lock {
+    overflow: hidden;
+  }
+
+  body.modal-lock {
+    margin-right: 0;
   }
 
   .container {
@@ -1435,15 +1442,31 @@ body.modal-lock {
     padding: 0;
   }
 
-  .main-navigation {
-  }
-
   .main-header-logo {
     width: 90%;
     max-width: 368px;
     padding: 0;
     margin: 0;
     margin-top: 60px;
+  }
+
+  .inner-page .main-header-logo {
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    /* margin: 4px; */
+    background-image: url('../img/common/logo-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80%;
+    z-index: 60;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+  }
+
+  .inner-page .main-header-logo img {
+    display: none;
   }
 
   .main-navigation-wrapper {
@@ -1456,10 +1479,6 @@ body.modal-lock {
     height: 40px;
     display: block;
     z-index: 50;
-  }
-
-  body.menu-lock {
-    overflow: hidden;
   }
 
   .main-navigation-wrapper .container {
@@ -1639,11 +1658,7 @@ body.modal-lock {
     margin: 0 auto;
   }
 
-  .gallery-slide img {
-  }
-
   .modal {
-    /* position: fixed; */
     left: 0;
     top: 30%;
     width: 100%;
@@ -1676,7 +1691,7 @@ body.modal-lock {
   }
 
   .appointment-form input {
-    width: 100%;    
+    width: 100%;
   }
 
   .modal-login {
@@ -1686,11 +1701,12 @@ body.modal-lock {
   }
 
   .login-form input[type='text'],
-  .login-form input[type='password']  {
+  .login-form input[type='password'] {
     width: 100%;
   }
 
-  .login-icon-user, .login-icon-password {
+  .login-icon-user,
+  .login-icon-password {
     background-position: 96%;
   }
 
