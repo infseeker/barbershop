@@ -230,3 +230,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   new Modal();
 });
+
+console.log('test');
