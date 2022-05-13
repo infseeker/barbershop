@@ -1,2 +1,2 @@
 # barbershop
-Simple Landing project
+Simple Landing Project
